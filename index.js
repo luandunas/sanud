@@ -3,7 +3,7 @@ var Eris = require('eris');
 var stdin = process.openStdin();
 var sCala = ['214946188108103680', '211962239433834498', '233372554058792970'];
 var bot = new Eris(process.env.BOT_TOKEN);
-eval(fs.readFileSync('scrap.js') + '');
+//eval(fs.readFileSync('scrap.js') + '');
 
 var setarGame = 0;
 var mute = [];
