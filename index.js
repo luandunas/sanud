@@ -43,13 +43,13 @@ bot.on("messageCreate", (msg) => {
 
     if (command == '!cuck' && args[0] != null && cuck.indexOf(args[0].replace(/\D/g, '')) == -1) {
         cuck.push(args[0].replace(/\D/g, ''));
-        bot.createMessage(msg.channel.id, args[0] TA CUCKADO KKKK!);
+        bot.createMessage(msg.channel.id, args[0] + 'TA CUCKADO KKKK!');
     }
     if (command == '!descuck' && args[0] != null && cuck.indexOf(args[0].replace(/\D/g, '')) != -1) {
         if (cuck.indexOf(args[0].replace(/\D/g, '')) != -1) {
             cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
             console.log(cuck);
-            bot.createMessage(msg.channel.id, args[0] vc é meu unico amor bb!);
+            bot.createMessage(msg.channel.id, args[0] + 'vc é meu unico amor bb!');
         }
     }
 
