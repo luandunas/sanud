@@ -8,7 +8,7 @@
     "eris": "^0.8.6",
     "fs": "^0.0.1-security",
     "request": "^2.88.0",
-  }
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js"
