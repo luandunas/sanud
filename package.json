@@ -1,8 +1,8 @@
 {
-  "name": "sanud",
+  "name": "freddy",
   "version": "1.0.0",
-  "description": "simple discord bot",
-  "main": "index.js",
+  "description": "my discord bot for Yggdrasil",
+  "main": "bot.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "eris": "^0.8.6",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm index.js"
+    "start": "node index.js"
   },
   "author": "Dunas",
   "license": "ISC"
