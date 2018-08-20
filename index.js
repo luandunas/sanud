@@ -1,6 +1,5 @@
 var fs = require('fs');
 var Eris = require('eris');
-var stdin = process.openStdin();
 var sCala = ['214946188108103680', '211962239433834498', '233372554058792970'];
 var bot = new Eris(process.env.BOT_TOKEN);
 //eval(fs.readFileSync('scrap.js') + '');
@@ -12,43 +11,10 @@ bot.on("ready", () => {
     console.log("Ready!");
 
 });
-
-stdin.addListener("data", function(d) {
-    var command = d.toString().trim();
-    let args = d.toString().trim();
-
-    if (command === "!setargame") {
-        setTimeout(function() {
-            setarGame = 1;
-        }, 10);
-        console.log("Digite o nome do game");
-    }
-
-    if (command == 'remover') {
-        if (mute.indexOf('a') != -1) {
-            mute.splice(mute.indexOf('a'), 1);
-            console.log(mute);
-        }
-    }
-
-    if (setarGame == 1 && command != null) {
-        bot.editStatus({
-            name: `!help | ${args}`
-        });
-        console.log("Jogo mudado para: " + args);
-        setTimeout(function() {
-            setarGame = 0;
-        }, 10);
-    }
-
-});
-
 bot.on("messageCreate", (msg) => {
     if (msg.author.bot) return;
     let command = msg.content.split(" ")[0];
     let args = msg.content.split(" ").slice(1);
-
-
 
     if (command === "!calaboca" && args[0] != null && sCala.indexOf(msg.author.id) != -1 && mute.indexOf(args[0].replace(/\D/g, '')) == -1) {
         msg.channel.createMessage(args[0] + ' CALADO PORA! Kk');
