@@ -20,7 +20,7 @@ request('http://www.brawlhalla.com/community/', function (error, response, html)
         $('div.et_post_meta_wrapper').each(function(i, element){
         var cc = $(this).prev().text().match(/.....-.....-...../g);
         if(cc != null){
-        bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+        bot.createMessage('399026580174667788', '<@211962239433834498> <@214946188108103680> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
       }
     });
   }
@@ -47,7 +47,7 @@ setInterval(function() {
           $('div.et_post_meta_wrapper').each(function(i, element){
           var cc = $(this).prev().text().match(/.....-.....-...../g);
           if(cc != null){
-          bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+          bot.createMessage('399026580174667788', '<@211962239433834498> <@214946188108103680> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
         }
       });
     }
