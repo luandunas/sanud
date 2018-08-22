@@ -11,6 +11,23 @@ bot.on("ready", () => {
     console.log("Ready!");
 
 });
+bot.on("guildMemberAdd", (guild, member) => {
+    if (bot.guilds.get(member.guild.id).roles.map(r => r.id).indexOf('481690111675727882') != -1){
+        bot.getDMChannel(member.id).then(dm => {
+            bot.createMessage(dm.id, '``.bem vindo a Kaimon.`` 🌜');
+        });
+        member.addRole('481719915523604505');
+   }
+})
+
+bot.on("presenceUpdate", (member) =>{
+   if (bot.guilds.get(member.guild.id).roles.map(r => r.id).indexOf('481690111675727882') != -1 && member.status == 'offline'){
+        member.addRole('481715680375472128');
+   }
+   if (bot.guilds.get(member.guild.id).roles.map(r => r.id).indexOf('481690111675727882') != -1 && member.status != 'offline'){
+    member.removeRole('481715680375472128');
+}
+});
 bot.on("messageCreate", (msg) => {
     if (msg.author.bot) return;
     let command = msg.content.split(" ")[0];
