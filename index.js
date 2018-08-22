@@ -73,6 +73,24 @@ bot.on("messageCreate", (msg) => {
     if (cuck.indexOf(msg.author.id) != -1 && msg.channel.id == '399026580174667788') {
         msg.addReaction('🐂')
     }
+    
+        if (command == '!viado' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && viado.indexOf(args[0].replace(/\D/g, '')) == -1){
+        msg.delete();
+        viado.push(args[0].replace(/\D/g, ''));
+        bot.createMessage(msg.channel.id, args[0] + ' ta chupando uns pitão 🏳️‍🌈');
+    }
+    if (command == '!hetero' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
+        if(cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
+            msg.delete();
+            cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
+            console.log(cuck);
+            bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
+        }
+    }
+    if (cuck.indexOf(msg.author.id) != -1 && msg.channel.id == '300705416197701645'){
+        msg.addReaction('🏳️‍🌈')
+    }
+
 
     /*if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1) {
         msg.channel.createMessage(args[0] + ' To na festa ainda Kk');
