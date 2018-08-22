@@ -7,6 +7,7 @@ eval(fs.readFileSync('scrap.js') + '');
 var setarGame = 0;
 var mute = [];
 var cuck = [];
+var viado = [];
 bot.on("ready", () => {
     console.log("Ready!");
 
