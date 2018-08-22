@@ -80,11 +80,11 @@ bot.on("messageCreate", (msg) => {
         viado.push(args[0].replace(/\D/g, ''));
         bot.createMessage(msg.channel.id, args[0] + ' ta chupando uns pitão 🏳️‍🌈');
     }
-    if (command == '!hetero' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
-        if(cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
+    if (command == '!hetero' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && viado.indexOf(args[0].replace(/\D/g, '')) != -1){
+        if(viado.indexOf(args[0].replace(/\D/g, '')) != -1){
             msg.delete();
-            cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
-            console.log(cuck);
+            viado.splice(viado.indexOf(args[0].replace(/\D/g, '')), 1);
+            console.log(viado);
             bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
         }
     }
