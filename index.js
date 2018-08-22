@@ -88,7 +88,7 @@ bot.on("messageCreate", (msg) => {
             bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
         }
     }
-    if (viado.indexOf(msg.author.id) != -1 && msg.channel.id == '300705416197701645'){
+    if (viado.indexOf(msg.author.id) != -1 && msg.channel.id == '399026580174667788'){
         msg.addReaction('🏳️‍🌈')
     }
 
