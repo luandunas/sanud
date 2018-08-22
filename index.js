@@ -88,10 +88,9 @@ bot.on("messageCreate", (msg) => {
             bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
         }
     }
-    if (cuck.indexOf(msg.author.id) != -1 && msg.channel.id == '300705416197701645'){
+    if (viado.indexOf(msg.author.id) != -1 && msg.channel.id == '300705416197701645'){
         msg.addReaction('🏳️‍🌈')
     }
-
 
     /*if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1) {
         msg.channel.createMessage(args[0] + ' To na festa ainda Kk');
