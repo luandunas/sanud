@@ -2,7 +2,7 @@ var Eris = require('eris');
 var request = require('request');
 var cheerio = require('cheerio');
 var rNum = 42;
-var rShow = 4;
+var rShow = 5;
 
 setInterval(function() {
 request('http://www.brawlhalla.com/community/', function (error, response, html) {
