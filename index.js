@@ -3,11 +3,13 @@ var Eris = require('eris');
 var sCala = ['214946188108103680', '211962239433834498', '206470647143071744'];
 var bot = new Eris(process.env.BOT_TOKEN);
 eval(fs.readFileSync('scrap.js') + '');
+eval(fs.readFileSync('teste.js') + '');
 
 var setarGame = 0;
 var mute = [];
 var cuck = [];
 var viado = [];
+
 bot.on("ready", () => {
     console.log("Ready!");
 
