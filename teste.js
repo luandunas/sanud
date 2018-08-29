@@ -7,6 +7,6 @@ bot.on("messageCreate", (msg) => {
     if (command === "!t") {
         fs.writeFile("teste.json", 'ok', function(err) {});
         bot.createMessage(msg.channel.id, "done!");
-        console.log(JSON.stringify(teste.json));
+        console.log(JSON.stringify(config));
     }
 });
