@@ -10,4 +10,7 @@ bot.on("messageCreate", (msg) => {
         console.log(config);
         bot.createMessage(msg.channel.id, "done!");
     }
+    if (command == "!log"){
+        console.log(config);
+    }
 });
