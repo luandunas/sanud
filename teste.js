@@ -5,8 +5,9 @@ bot.on("messageCreate", (msg) => {
     let command = msg.content.split(" ")[0];
     let args = msg.content.split(" ").slice(1);
     if (command === "!t") {
-        fs.writeFile("teste.json", 'ok', function(err) {});
+        config.game_name = "A";
+        fs.writeFile("teste.json", JSON.stringify(config), function(err) {});
+        console.log(config);
         bot.createMessage(msg.channel.id, "done!");
-        console.log(JSON.stringify(config));
     }
 });
