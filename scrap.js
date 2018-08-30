@@ -34,9 +34,7 @@ setInterval(function() {
                   }, function(err, res, body) {
                     json = JSON.parse(body);
                   });
-                  setTimeout(function() {
-                  bot.createMessage('483152613458837515', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
-                  }, 1000);
+                  bot.createMessage('483152613458837515', 'CCS: <@211962239433834498> <@214946188108103680>' + cc.toString().replace(/,/g, '\n'));
                 }
               });
             }
@@ -68,9 +66,7 @@ setInterval(function() {
                   }, function(err, res, body) {
                     json = JSON.parse(body);
                   });
-                  setTimeout(function() {
                   bot.createMessage('483152613458837515', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
-                  }, 1000);
                 }
               });
             }
