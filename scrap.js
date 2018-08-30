@@ -1,5 +1,6 @@
 var Eris = require('eris');
 var request = require('request');
+var cheerio = require('cheerio');
 var fs = require('fs');
 var myJsonAPI = require('myjson-api');
 var json;
