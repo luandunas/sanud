@@ -1,61 +1,77 @@
 var Eris = require('eris');
 var request = require('request');
-var cheerio = require('cheerio');
-var rNum = 42;
-var rShow = 5;
-
-setInterval(function() {
-request('http://www.brawlhalla.com/community/', function (error, response, html) {
-  if (!error && response.statusCode == 200) {
-    var $ = cheerio.load(html);
-    $('h2.entry-title').each(function(i, element){
-      var a = $(this);
-      var sites = a.text();
-      if(sites.indexOf('Community Roundup #' + rNum) != -1){
-        rNum++;
-        console.log('CONTEM!');
-        request('http://www.brawlhalla.com/news/community-roundup-42/', function (error, response, html) {
-        if (!error && response.statusCode == 200) {
-        var $ = cheerio.load(html);
-        $('div.et_post_meta_wrapper').each(function(i, element){
-        var cc = $(this).prev().text().match(/.....-.....-...../g);
-        if(cc != null){
-        bot.createMessage('483152613458837515', '<@211962239433834498> <@214946188108103680> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
-        bot.createMessage('481624510773329931', '<@211962239433834498> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
-      }
-    });
-  }
+var fs = require('fs');
+var myJsonAPI = require('myjson-api');
+var json;
+bot.on("ready", () => {
+  console.log("Scrap Ready!");
 });
-      }
-    });
-  }
+request({
+  url: "https://api.myjson.com/bins/njwy4",
+}, function(err, res, body) {
+  json = JSON.parse(body);
 });
-}, 5000);
-
 setInterval(function() {
-  request('http://www.brawlhalla.com/community/', function (error, response, html) {
+  request('http://www.brawlhalla.com/community/', function(error, response, html) {
     if (!error && response.statusCode == 200) {
       var $ = cheerio.load(html);
-      $('h2.entry-title').each(function(i, element){
+      $('h2.entry-title').each(function(i, element) {
         var a = $(this);
         var sites = a.text();
-        if(sites.indexOf('Brawlhalla Community Art Showcase #' + rShow) != -1){
+        if (sites.indexOf('Community Roundup #' + json.roundup) != -1) {
+          console.log('CONTEM ROUNDUP!');
+          request('http://www.brawlhalla.com/news/community-roundup-' + json.roundup + '/', function(error, response, html) {
+            if (!error && response.statusCode == 200) {
+              var $ = cheerio.load(html);
+              $('div.et_post_meta_wrapper').each(function(i, element) {
+                var cc = $(this).prev().text().match(/.....-.....-...../g);
+                if (cc != null) {
+                  json.roundup = json.roundup += 1;
+                  myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
+                  request({
+                    url: "https://api.myjson.com/bins/njwy4",
+                  }, function(err, res, body) {
+                    json = JSON.parse(body);
+                  });
+                  bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+}, 5000);
+setInterval(function() {
+  request('http://www.brawlhalla.com/community/', function(error, response, html) {
+    if (!error && response.statusCode == 200) {
+      var $ = cheerio.load(html);
+      $('h2.entry-title').each(function(i, element) {
+        var a = $(this);
+        var sites = a.text();
+        if (sites.indexOf('Brawlhalla Community Art Showcase #' + json.showcase) != -1) {
           console.log('CONTEM SHOW!');
-          rShow++;
-          request('http://www.brawlhalla.com/news/brawlhalla-community-art-showcase-4/', function (error, response, html) {
-          if (!error && response.statusCode == 200) {
-          var $ = cheerio.load(html);
-          $('div.et_post_meta_wrapper').each(function(i, element){
-          var cc = $(this).prev().text().match(/.....-.....-...../g);
-          if(cc != null){
-          bot.createMessage('483152613458837515', '<@211962239433834498> <@214946188108103680> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
-          bot.createMessage('481624510773329931', '<@211962239433834498> **CC CARALHOOOOO:**\n' + cc.toString().replace(/,/g, '\n'));
+          request('http://www.brawlhalla.com/news/brawlhalla-community-art-showcase-' + json.showcase + '/', function(error, response, html) {
+            if (!error && response.statusCode == 200) {
+              var $ = cheerio.load(html);
+              $('div.et_post_meta_wrapper').each(function(i, element) {
+                var cc = $(this).prev().text().match(/.....-.....-...../g);
+                if (cc != null) {
+                  json.showcase = json.showcase += 1;
+                  myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
+                  request({
+                    url: "https://api.myjson.com/bins/njwy4",
+                  }, function(err, res, body) {
+                    json = JSON.parse(body);
+                  });
+                  bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                }
+              });
+            }
+          });
         }
       });
     }
   });
-        }
-      });
-    }
-  });
-  }, 5000);
+}, 5000);
