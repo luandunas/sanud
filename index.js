@@ -42,6 +42,7 @@ bot.on("messageCreate", (msg) => {
 
 
     if (command === "!calaboca" && args[0] != null && sCala.indexOf(msg.author.id) == -1) {
+        msg.delete();
         msg.channel.createMessage(msg.author.mention + ' você não, você é CROCODILO!');
     }
 
@@ -53,6 +54,7 @@ bot.on("messageCreate", (msg) => {
     }
 
     if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1 && mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
+        msg.delete();
         msg.channel.createMessage(args[0] + ' PODE FALAR KRL! Kk');
         if (mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
             mute.splice(mute.indexOf(args[0].replace(/\D/g, '')), 1);
@@ -61,18 +63,20 @@ bot.on("messageCreate", (msg) => {
     }
 
     if (command == '!cuck' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) == -1){
+        msg.delete();
         cuck.push(args[0].replace(/\D/g, ''));
         bot.createMessage(msg.channel.id, args[0] + ' te amo bb, você é meu unico amor ❤');
     }
     if (command == '!descuck' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
         if(cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
+            msg.delete();
             cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
             console.log(cuck);
             bot.createMessage(msg.channel.id, args[0] + ' PASSEI A MAKITA NO TEU CHIFRE 🐃 KKKKK');
         }
     }
 
-    if (cuck.indexOf(msg.author.id) != -1 && msg.channel.id == '399026580174667788') {
+    if (cuck.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
         msg.addReaction('🐂')
     }
     
@@ -89,7 +93,7 @@ bot.on("messageCreate", (msg) => {
             bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
         }
     }
-    if (viado.indexOf(msg.author.id) != -1 && msg.channel.id == '399026580174667788'){
+    if (viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0'){
         msg.addReaction('🏳️‍🌈')
     }
 
