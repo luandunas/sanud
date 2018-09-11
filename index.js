@@ -105,9 +105,6 @@ bot.on("messageCreate", (msg) => {
     if (mute.indexOf(msg.author.id) != -1) {
         msg.delete();
     }
-    if (command === "ping") {
-        bot.createMessage(msg.channel.id, "Pong!");
-    }
     if (command == "!say" && args[0] != undefined && msg.author.id == 211962239433834498) {
         msg.delete();
 
