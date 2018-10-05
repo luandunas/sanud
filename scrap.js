@@ -7,7 +7,6 @@ var json;
 var mandarUm = false;
 bot.on("ready", () => {
     console.log("Scrap Ready!");
-    json.showcase = 6;
 });
 request({
     url: "https://api.myjson.com/bins/njwy4",
