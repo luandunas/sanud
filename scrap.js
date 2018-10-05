@@ -20,7 +20,6 @@ setInterval(function() {
             $('h2.entry-title').each(function(i, element) {
                 var a = $(this);
                 var sites = a.text();
-                console.log(sites)
                 if (sites.indexOf('Community Roundup #' + json.roundup) != -1) {
                     console.log('CONTEM ROUNDUP!');
                     request('http://www.brawlhalla.com/news/community-roundup-' + json.roundup + '/', function(error, response, html) {
