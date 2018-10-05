@@ -36,11 +36,11 @@ setInterval(function() {
                                         json = JSON.parse(body);
                                     });
                                     if (mandarUm == false) {
-                                        mandarUm = true;
                                         bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
+                                        mandarUm = true;
                                     }
                                 }
                             });
@@ -74,11 +74,11 @@ setInterval(function() {
                                         json = JSON.parse(body);
                                     });
                                     if (mandarUm == false) {
-                                        mandarUm = true;
                                         bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
+                                        mandarUm = true;
                                     }
                                 }
                             });
