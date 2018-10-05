@@ -7,7 +7,9 @@ var json;
 var mandarUm = false;
 bot.on("ready", () => {
   console.log("Ready!");
+  setTimeout(function() {
   console.log(json);
+  }, 5000);
 });
 request({
     url: "https://api.myjson.com/bins/njwy4",
