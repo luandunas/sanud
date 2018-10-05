@@ -7,10 +7,6 @@ var json;
 var mandarUm = false;
 bot.on("ready", () => {
   console.log("Ready!");
-  setTimeout(function() {
-  json.roundup = 41;
-  myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
-  }, 5000);
 });
 request({
     url: "https://api.myjson.com/bins/njwy4",
