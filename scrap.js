@@ -11,7 +11,7 @@ request({
     json = JSON.parse(body);
 });
 bot.on("ready", () => {
-    console.log("Scrap Ready!");
+    console.log("Scrap Ready");
       json.showcase = 46;
       myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
 });
