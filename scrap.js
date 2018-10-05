@@ -8,7 +8,6 @@ var mandarUm = false;
 bot.on("ready", () => {
     console.log("Scrap Ready!");
     json.showcase = 6;
-    myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
 });
 request({
     url: "https://api.myjson.com/bins/njwy4",
