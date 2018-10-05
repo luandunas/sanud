@@ -11,6 +11,11 @@ request({
     json = JSON.parse(body);
 });
 bot.on("ready", () => {
+    request({
+    url: "https://api.myjson.com/bins/njwy4",
+}, function(err, res, body) {
+    json = JSON.parse(body);
+});
     console.log("Scrap Ready");
       json.showcase = 46;
       myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
