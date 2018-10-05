@@ -5,20 +5,15 @@ var fs = require('fs');
 var myJsonAPI = require('myjson-api');
 var json;
 var mandarUm = false;
+bot.on("ready", () => {
+    console.log("Ready!");
+    json.showcase = 46;
+    myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
+});
 request({
     url: "https://api.myjson.com/bins/njwy4",
 }, function(err, res, body) {
     json = JSON.parse(body);
-});
-bot.on("ready", () => {
-    request({
-    url: "https://api.myjson.com/bins/njwy4",
-}, function(err, res, body) {
-    json = JSON.parse(body);
-});
-    console.log("Scrap Ready");
-      json.showcase = 46;
-      myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
 });
 setInterval(function() {
     request('http://www.brawlhalla.com/community/', function(error, response, html) {
@@ -42,13 +37,7 @@ setInterval(function() {
                                     }, function(err, res, body) {
                                         json = JSON.parse(body);
                                     });
-                                    if (mandarUm == false) {
-                                        bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
-                                        setTimeout(function() {
-                                            mandarUm = false;
-                                        }, 5000);
-                                        mandarUm = true;
-                                    }
+                                    bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                 }
                             });
                         }
@@ -80,13 +69,7 @@ setInterval(function() {
                                     }, function(err, res, body) {
                                         json = JSON.parse(body);
                                     });
-                                    if (mandarUm == false) {
-                                        bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
-                                        setTimeout(function() {
-                                            mandarUm = false;
-                                        }, 5000);
-                                        mandarUm = true;
-                                    }
+                                    bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                 }
                             });
                         }
@@ -96,3 +79,4 @@ setInterval(function() {
         }
     });
 }, 5000);
+bot.connect();
