@@ -14,7 +14,7 @@ request({
     json = JSON.parse(body);
 });
 setInterval(function() {
-    request('http://www.brawlhalla.com/community/', function(error, response, html) {
+    request('http://www.brawlhalla.com/more-community/', function(error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             $('h2.entry-title').each(function(i, element) {
@@ -52,7 +52,7 @@ setInterval(function() {
     });
 }, 5000);
 setInterval(function() {
-    request('http://www.brawlhalla.com/community/', function(error, response, html) {
+    request('http://www.brawlhalla.com/more-community/', function(error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             $('h2.entry-title').each(function(i, element) {
