@@ -6,10 +6,9 @@ var myJsonAPI = require('myjson-api');
 var json;
 var mandarUm = false;
 bot.on("ready", () => {
-  console.log("Ready!");
-  setTimeout(function() {
-  console.log(json);
-  }, 5000);
+    console.log("Ready!");
+    json.roundup = 41;
+    myJsonAPI.update("njwy4", json).then((updatedJSON) => console.log(updatedJSON));
 });
 request({
     url: "https://api.myjson.com/bins/njwy4",
@@ -38,7 +37,13 @@ setInterval(function() {
                                     }, function(err, res, body) {
                                         json = JSON.parse(body);
                                     });
-                                    bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                    if (mandarUm == false) {
+                                        bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                        setTimeout(function() {
+                                            mandarUm = false;
+                                        }, 5000);
+                                        mandarUm = true;
+                                    }
                                 }
                             });
                         }
@@ -70,7 +75,13 @@ setInterval(function() {
                                     }, function(err, res, body) {
                                         json = JSON.parse(body);
                                     });
-                                    bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                    if (mandarUm == false) {
+                                        bot.createMessage('300705416197701645', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                        setTimeout(function() {
+                                            mandarUm = false;
+                                        }, 5000);
+                                        mandarUm = true;
+                                    }
                                 }
                             });
                         }
