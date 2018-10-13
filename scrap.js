@@ -14,6 +14,11 @@ request({
     json = JSON.parse(body);
 });
 setInterval(function() {
+    request({
+    url: "https://api.myjson.com/bins/njwy4",
+    }, function(err, res, body) {
+    json = JSON.parse(body);
+    });
     request('http://www.brawlhalla.com/community/', function(error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
@@ -36,7 +41,7 @@ setInterval(function() {
                                         json = JSON.parse(body);
                                     });
                                     if (mandarUm == false) {
-                                        bot.createMessage('300705416197701645', 'CCS: <@211962239433834498> <@214946188108103680> \n', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                        bot.createMessage('483152613458837515', 'CCS: <@211962239433834498> <@214946188108103680> \n', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
@@ -74,7 +79,7 @@ setInterval(function() {
                                         json = JSON.parse(body);
                                     });
                                     if (mandarUm == false) {
-                                        bot.createMessage('300705416197701645', 'CCS: <@211962239433834498> <@214946188108103680> \n' + cc.toString().replace(/,/g, '\n'));
+                                        bot.createMessage('483152613458837515', 'CCS: <@211962239433834498> <@214946188108103680> \n' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
