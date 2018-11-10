@@ -42,6 +42,7 @@ setInterval(function() {
                                     });
                                     if (mandarUm == false) {
                                         bot.createMessage('483152613458837515', 'CCS: <@211962239433834498> <@214946188108103680> \n', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
+                                        bot.createMessage('481624510773329931', 'CCS: <@211962239433834498> <@214946188108103680> \n', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
@@ -80,6 +81,7 @@ setInterval(function() {
                                     });
                                     if (mandarUm == false) {
                                         bot.createMessage('483152613458837515', 'CCS: <@211962239433834498> <@214946188108103680> \n' + cc.toString().replace(/,/g, '\n'));
+                                        bot.createMessage('481624510773329931', 'CCS: <@211962239433834498> <@214946188108103680> \n', 'CCS: ' + cc.toString().replace(/,/g, '\n'));
                                         setTimeout(function() {
                                             mandarUm = false;
                                         }, 5000);
