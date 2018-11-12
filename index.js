@@ -105,11 +105,11 @@ bot.on("messageCreate", (msg) => {
     if (viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0'){
         msg.addReaction('🏳️‍🌈')
     }
-    if (command == "!furacão2000" && args[0] != null && sCala.indexOf(msg.author.id) != -1){
+    /*if (command == "!furacão2000" && args[0] != null && sCala.indexOf(msg.author.id) != -1){
         furacao.push(args[0].replace(/\D/g, ''));
         console.log(furacao);
         bot.createMessage(msg.channel.id, args[0] + ' OLHA A CARRETA PORAAAAAAAAA');
-    }
+    }*/
 
     /*if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1) {
         msg.channel.createMessage(args[0] + ' To na festa ainda Kk');
