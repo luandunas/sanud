@@ -5,7 +5,7 @@ var voiceCanal = ['480612648405434388', '459477541774688256', '46027207508964149
 var bot = new Eris(process.env.BOT_TOKEN);
 eval(fs.readFileSync('scrap.js') + '');
 
-var setarGame = 0;
+//var setarGame = 0;
 var mute = [];
 var cuck = [];
 var viado = [];
