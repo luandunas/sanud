@@ -13,7 +13,7 @@ var furacao = [];
 
 bot.on("ready", () => {
     console.log("Ready!");
-
+    bot.editStatus({ name: 'PornHub', type: 3, url: 'https://www.pornhub.com/' });
 });
 bot.on("guildMemberAdd", (guild, member) => {
     if (bot.guilds.get(member.guild.id).roles.map(r => r.id).indexOf('481690111675727882') != -1){
