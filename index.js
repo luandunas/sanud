@@ -28,7 +28,7 @@ bot.on("voiceChannelJoin", (member) =>{
     if (furacao.indexOf(member.id) != -1){
         member.edit({channelID: voiceCanal[Math.floor(Math.random()*voiceCanal.length)]});
     }
-  }, 5000);
+  }, 3000);
 })
 
 bot.on("presenceUpdate", (member) =>{
