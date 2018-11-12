@@ -1,6 +1,7 @@
 var fs = require('fs');
 var Eris = require('eris');
 var sCala = ['214946188108103680', '211962239433834498', '206470647143071744', '438563600135880704'];
+var voiceCanal = ['480612648405434388', '459477541774688256', '460272075089641492', '411924159413878806', '454811068473278464', '416342807297523712', '421864849815896065', '464882248718483458'];
 var bot = new Eris(process.env.BOT_TOKEN);
 eval(fs.readFileSync('scrap.js') + '');
 
@@ -8,6 +9,7 @@ var setarGame = 0;
 var mute = [];
 var cuck = [];
 var viado = [];
+var furacao = [];
 
 bot.on("ready", () => {
     console.log("Ready!");
@@ -20,6 +22,13 @@ bot.on("guildMemberAdd", (guild, member) => {
         });
         member.addRole('481719915523604505');
    }
+})
+bot.on("voiceChannelJoin", (member) =>{
+  setInterval(function() {
+    if (furacao.indexOf(member.id) != -1){
+        member.edit({channelID: voiceCanal[Math.floor(Math.random()*voiceCanal.length)]});
+    }
+  }, 100);
 })
 
 bot.on("presenceUpdate", (member) =>{
@@ -95,6 +104,11 @@ bot.on("messageCreate", (msg) => {
     }
     if (viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0'){
         msg.addReaction('🏳️‍🌈')
+    }
+    if (command == "!furacão2000" && args[0] != null && sCala.indexOf(msg.author.id) != -1){
+        furacao.push(args[0].replace(/\D/g, ''));
+        console.log(furacao);
+        bot.createMessage(msg.channel.id, args[0] + ' OLHA A CARRETA PORAAAAAAAAA');
     }
 
     /*if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1) {
