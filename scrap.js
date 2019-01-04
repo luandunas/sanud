@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 var myJsonAPI = require('myjson-api');
 var json;
+var mandarUm = false;
 bot.on("ready", () => {
     console.log("Ready!");
 });
