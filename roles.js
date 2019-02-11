@@ -6,10 +6,7 @@ request({
     jsonrole = JSON.parse(body);
 });
 
-var jsson = JSON.parse(`{"211962239433834498":{"role":["474052081356111903"]}}`);
-
 bot.on("ready", () => {
-    myJsonAPI.update("s0efk", jsson).then((updatedJSON) => console.log(updatedJSON));
     console.log("Ready!");
     bot.guilds.get('399026579679870977').roles.map(i => i).forEach(function(role) {
         if (role.name == 'Muted') {
