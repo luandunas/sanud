@@ -33,15 +33,6 @@ bot.on("guildMemberAdd", (guild, member) => {
     }
 })
 
-bot.on("guildMemberAdd", (guild, member) => {
-    if (guild.id == "399026579679870977" && member.bot == false && JSON.stringify(json).indexOf(member.id) == -1) {
-        setTimeout(function() {
-            member.removeRole('462745717895856140');
-            bot.createMessage('399026580174667788', 'cargo e cor pora')
-        }, 5000);
-    }
-})
-
 bot.on("messageCreate", (msg) => {
     if (msg.author.bot) return;
     let command = msg.content.split(" ")[0];
