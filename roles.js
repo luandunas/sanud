@@ -8,7 +8,7 @@ request({
 
 jsson = `{'211962239433834498':{"role":["474052081356111903"]}}`;
 
-myJsonAPI.update("s0efk", jsonrole).then((updatedJSON) => console.log(updatedJSON));
+myJsonAPI.update("s0efk", jsson).then((updatedJSON) => console.log(updatedJSON));
 
 bot.on("ready", () => {
     console.log("Ready!");
