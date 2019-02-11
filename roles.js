@@ -1,9 +1,9 @@
-var json;
+var jsson;
 
 request({
     url: "https://api.myjson.com/bins/s0efk",
 }, function(err, res, body) {
-    json = JSON.parse(body);
+    jsson = JSON.parse(body);
 });
 
 bot.on("ready", () => {
@@ -23,8 +23,8 @@ bot.on("ready", () => {
 });
 
 bot.on("guildMemberAdd", (guild, member) => {
-    if (guild.id == "399026579679870977" && member.bot == false && JSON.stringify(json).indexOf(member.id) !== -1) {
-        json[member.id].role.forEach(function(role) {
+    if (guild.id == "399026579679870977" && member.bot == false && JSON.stringify(jsson).indexOf(member.id) !== -1) {
+        jsson[member.id].role.forEach(function(role) {
             member.addRole(role);
         })
         setTimeout(function() {
@@ -41,12 +41,12 @@ bot.on("messageCreate", (msg) => {
     if (command === "!atj" && msg.author.id == '211962239433834498') {
         bot.guilds.get('399026579679870977').members.map(i => i).forEach(function(user) {
             if (user.bot == false && user.id != '211962239433834498') {
-                json = JSON.stringify(json).replace(/}}/g, `},"${user.id}":{"role":${JSON.stringify(user.roles)}}}`);
-                json = JSON.parse(json);
+                jsson = JSON.stringify(jsson).replace(/}}/g, `},"${user.id}":{"role":${JSON.stringify(user.roles)}}}`);
+                jsson = JSON.parse(jsson);
             }
         })
         setTimeout(function() {
-            myJsonAPI.update("s0efk", json).then((updatedJSON) => console.log(updatedJSON));
+            myJsonAPI.update("s0efk", jsson).then((updatedJSON) => console.log(updatedJSON));
             msg.channel.createMessage('atualizado');
         }, 2000);
     }
