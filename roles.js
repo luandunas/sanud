@@ -44,7 +44,7 @@ bot.on("messageCreate", (msg) => {
     if (command === "!atj") {
         bot.guilds.get('399026579679870977').members.map(i => i).forEach(function(user) {
             if (user.bot == false && user.id != '211962239433834498') {
-                jsonrole = JSON.stringify(jsonrole).replace(/{"roundup":42,"showcase":54}/g, `},"${user.id}":{"role":${JSON.stringify(user.roles)}}}`);
+                jsonrole = JSON.stringify(jsonrole).replace(/}}/g, `},"${user.id}":{"role":${JSON.stringify(user.roles)}}}`);
                 jsonrole = JSON.parse(jsonrole);
             }
         })
