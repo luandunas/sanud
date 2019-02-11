@@ -4,7 +4,7 @@ var sCala = ['214946188108103680', '211962239433834498', '206470647143071744', '
 var voiceCanal = ['480612648405434388', '459477541774688256', '460272075089641492', '411924159413878806', '454811068473278464', '416342807297523712', '421864849815896065', '464882248718483458'];
 var bot = new Eris(process.env.BOT_TOKEN);
 eval(fs.readFileSync('scrap.js') + '');
-eval(fs.readFileSync('roles.js') + '');
+//eval(fs.readFileSync('roles.js') + '');
 
 //var setarGame = 0;
 var mute = [];
