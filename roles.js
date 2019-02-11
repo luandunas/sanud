@@ -16,7 +16,7 @@ bot.on("ready", () => {
         if (role.name == 'Muted') {
             //console.log(role.id);
         }
-    })
+    });
     bot.editStatus({
         name: 'PornHub',
         type: 3,
