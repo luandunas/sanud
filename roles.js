@@ -6,7 +6,7 @@ request({
     jsonrole = JSON.parse(body);
 });
 
-jsson = `{'211962239433834498':{"role":["474052081356111903"]}}`;
+jsson = `{"211962239433834498":{"role":["474052081356111903"]}}`;
 
 myJsonAPI.update("s0efk", jsson).then((updatedJSON) => console.log(updatedJSON));
 
