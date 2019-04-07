@@ -29,7 +29,7 @@ setInterval(function() {
                         json = JSON.parse(body);
                     });
                     if (mandarUm == false) {
-                        bot.createMessage('516083352290197504', `**CCS: <@&481690111675727882>  <@&519259085053493249> \n**${cc.toString().replace(/,/g, '\n')}`);
+                        bot.createMessage('564337011268517890', `**CCS: <@&481690111675727882>  <@&519259085053493249> \n**${cc.toString().replace(/,/g, '\n')}`);
                         setTimeout(function() {
                             mandarUm = false;
                         }, 5000);
