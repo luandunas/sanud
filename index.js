@@ -42,7 +42,7 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
 });
 
 bot.on("voiceStateUpdate", (member) => {
-  if(member.voiceState.channelID != null && member.voiceState.channelID == cid && member.voiceState.mute == false && power == true && msg.member.roles.indexOf('576512821056110621') == -1){
+  if(member.voiceState.channelID != null && member.voiceState.channelID == cid && member.voiceState.mute == false && power == true && member.roles.indexOf('576512821056110621') == -1){
     member.edit({mute: true});
   }
 });
