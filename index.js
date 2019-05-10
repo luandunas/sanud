@@ -30,7 +30,7 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
   cid = member.voiceState.channelID;
   if (power == true){
       newChannel.voiceMembers.forEach(function (m){
-        if(sCala.indexOf(m.id) == -1){
+        if(msg.member.roles.indexOf('576512821056110621') == -1){
           setTimeout(function() {
           m.edit({mute: true})
           }, 1000);
@@ -42,7 +42,7 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
 });
 
 bot.on("voiceStateUpdate", (member) => {
-  if(member.voiceState.channelID != null && member.voiceState.channelID == cid && member.voiceState.mute == false && power == true && sCala.indexOf(member.id) == -1){
+  if(member.voiceState.channelID != null && member.voiceState.channelID == cid && member.voiceState.mute == false && power == true && msg.member.roles.indexOf('576512821056110621') == -1){
     member.edit({mute: true});
   }
 });
@@ -60,7 +60,7 @@ bot.on("messageCreate", (msg) => {
     let command = msg.content.split(" ")[0];
     let args = msg.content.split(" ").slice(1);
 
-    if (command === "!calaboca" && args[0] != null && sCala.indexOf(msg.author.id) != -1 && mute.indexOf(args[0].replace(/\D/g, '')) == -1) {
+    if (command === "!calaboca" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && mute.indexOf(args[0].replace(/\D/g, '')) == -1) {
         msg.channel.createMessage(args[0] + ' CALADO PORA! Kk');
         mute.push(args[0].replace(/\D/g, ''));
     }
@@ -78,7 +78,7 @@ bot.on("messageCreate", (msg) => {
         console.log(msg.member.roles)
     }
 
-    if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1 && mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
+    if (command === "!descalar" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
         msg.delete();
         msg.channel.createMessage(args[0] + ' PODE FALAR KRL! Kk');
         if (mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
@@ -87,12 +87,12 @@ bot.on("messageCreate", (msg) => {
         }
     }
 
-    if (command == '!cuck' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) == -1){
+    if (command == '!cuck' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) == -1){
         msg.delete();
         cuck.push(args[0].replace(/\D/g, ''));
         bot.createMessage(msg.channel.id, args[0] + ' te amo bb, você é meu unico amor ❤');
     }
-    if (command == '!descuck' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
+    if (command == '!descuck' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
         if(cuck.indexOf(args[0].replace(/\D/g, '')) != -1){
             msg.delete();
             cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
@@ -105,12 +105,12 @@ bot.on("messageCreate", (msg) => {
         msg.addReaction('🐂')
     }
     
-        if (command == '!viado' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && viado.indexOf(args[0].replace(/\D/g, '')) == -1){
+        if (command == '!viado' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && viado.indexOf(args[0].replace(/\D/g, '')) == -1){
         msg.delete();
         viado.push(args[0].replace(/\D/g, ''));
         bot.createMessage(msg.channel.id, args[0] + ' ta chupando uns pitão 🏳️‍🌈');
     }
-    if (command == '!hetero' && args[0] != null && sCala.indexOf(msg.author.id) != -1 && viado.indexOf(args[0].replace(/\D/g, '')) != -1){
+    if (command == '!hetero' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && viado.indexOf(args[0].replace(/\D/g, '')) != -1){
         if(viado.indexOf(args[0].replace(/\D/g, '')) != -1){
             msg.delete();
             viado.splice(viado.indexOf(args[0].replace(/\D/g, '')), 1);
@@ -121,13 +121,13 @@ bot.on("messageCreate", (msg) => {
     if (viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0'){
         msg.addReaction('🏳️‍🌈')
     }
-    /*if (command == "!furacão2000" && args[0] != null && sCala.indexOf(msg.author.id) != -1){
+    /*if (command == "!furacão2000" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1){
         furacao.push(args[0].replace(/\D/g, ''));
         console.log(furacao);
         bot.createMessage(msg.channel.id, args[0] + ' OLHA A CARRETA PORAAAAAAAAA');
     }*/
 
-    /*if (command === "!descalar" && args[0] != null && sCala.indexOf(msg.author.id) != -1) {
+    /*if (command === "!descalar" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1) {
         msg.channel.createMessage(args[0] + ' To na festa ainda Kk');
     }*/
 
@@ -142,18 +142,18 @@ bot.on("messageCreate", (msg) => {
         console.log(args[0]);
     }
     
-        if(command == "!dentadura" && sCala.indexOf(msg.author.id) != -1 && power == false){
+        if(command == "!dentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == false){
       power = true; 
       bot.createMessage(msg.channel.id, '**COMEÇOU A DENTADURA PORRA**');
     }
 
-    if(power == true && msg.channel.guild.id == '562717330501664771' && sCala.indexOf(msg.author.id) == -1){
+    if(power == true && msg.channel.guild.id == '562717330501664771' && msg.member.roles.indexOf('576512821056110621') == -1){
       msg.delete();
     }
 
-    if(command == "!cabodentadura" && power == true){
+    if(command == "!cabodentadura" && power == true && msg.member.roles.indexOf('576512821056110621') != -1){
       msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function (m){
-        if(sCala.indexOf(m.id) == -1){
+        if(msg.member.roles.indexOf('576512821056110621') == -1){
           setTimeout(function() {
           m.edit({mute: false})
           }, 1000);
