@@ -153,7 +153,7 @@ bot.on("messageCreate", (msg) => {
 
     if(command == "!cabodentadura" && power == true && msg.member.roles.indexOf('576512821056110621') != -1){
       msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function (m){
-        if(msg.member.roles.indexOf('576512821056110621') == -1){
+        if(m.roles.indexOf('576512821056110621') == -1){
           setTimeout(function() {
           m.edit({mute: false})
           }, 1000);
