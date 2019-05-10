@@ -30,7 +30,7 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
   cid = member.voiceState.channelID;
   if (power == true){
       newChannel.voiceMembers.forEach(function (m){
-        if(member.roles.indexOf('576512821056110621') == -1){
+        if(m.roles.indexOf('576512821056110621') == -1){
           setTimeout(function() {
           m.edit({mute: true})
           }, 1000);
