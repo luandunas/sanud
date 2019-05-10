@@ -11,6 +11,8 @@ var mute = [];
 var cuck = [];
 var viado = [];
 var furacao = [];
+var power = false;
+var cid;
 
 bot.on("ready", () => {
     console.log("Ready!");
@@ -24,13 +26,24 @@ bot.on("guildMemberAdd", (guild, member) => {
         member.addRole('481719915523604505');
    }
 })
-bot.on("voiceChannelJoin", (member) =>{
-  setInterval(function() {
-    if (furacao.indexOf(member.id) != -1){
-        member.edit({channelID: voiceCanal[Math.floor(Math.random()*voiceCanal.length)]});
-    }
-  }, 5000);
-})
+bot.on("voiceChannelJoin", (member, newChannel) => {
+  cid = member.voiceState.channelID;
+  if (power == true){
+      newChannel.voiceMembers.forEach(function (m){
+        if(sCala.indexOf(m.id) == -1){
+          m.edit({mute: true})
+        }
+      })
+  }
+  if(newChannel.id == member.voiceState.channelID && member){
+  }
+});
+
+bot.on("voiceStateUpdate", (member) => {
+  if(member.voiceState.channelID != null && member.voiceState.channelID == cid && member.voiceState.mute == false && power == true && sCala.indexOf(member.id) == -1){
+    member.edit({mute: true});
+  }
+});
 
 bot.on("presenceUpdate", (member) =>{
    if (bot.guilds.get(member.guild.id).roles.map(r => r.id).indexOf('481690111675727882') != -1 && member.status == 'offline'){
@@ -125,6 +138,25 @@ bot.on("messageCreate", (msg) => {
 
         msg.channel.createMessage(args[0]);
         console.log(args[0]);
+    }
+    
+        if(command == "!dentadura" && sCala.indexOf(msg.author.id) != -1 && power == false){
+      power = true; 
+      bot.createMessage(msg.channel.id, '**COMEÇOU A DENTADURA PORRA**');
+    }
+
+    if(power == true && msg.channel.guild.id == '562717330501664771' && sCala.indexOf(msg.author.id) == -1){
+      msg.delete();
+    }
+
+    if(command == "!cabodentadura" && power == true){
+      power = false;
+      msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function (m){
+        if(sCala.indexOf(m.id) == -1){
+          m.edit({mute: false})
+        }
+      });
+      bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
     }
 
     /*if(command === "testar" && args[0] != null){
