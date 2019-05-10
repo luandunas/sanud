@@ -150,11 +150,11 @@ bot.on("messageCreate", (msg) => {
     }
 
     if(command == "!cabodentadura" && power == true){
-      power = false;
       msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function (m){
         if(sCala.indexOf(m.id) == -1){
           m.edit({mute: false})
         }
+        power = false;
       });
       bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
     }
