@@ -31,7 +31,9 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
   if (power == true){
       newChannel.voiceMembers.forEach(function (m){
         if(sCala.indexOf(m.id) == -1){
+          setTimeout(function() {
           m.edit({mute: true})
+          }, 1000);
         }
       })
   }
@@ -152,7 +154,9 @@ bot.on("messageCreate", (msg) => {
     if(command == "!cabodentadura" && power == true){
       msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function (m){
         if(sCala.indexOf(m.id) == -1){
+          setTimeout(function() {
           m.edit({mute: false})
+          }, 1000);
         }
         power = false;
       });
