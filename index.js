@@ -206,4 +206,4 @@ bot.on("voiceStateUpdate", (member) => {
 		});
 	}
 });
-onnect();
+connect();
