@@ -152,12 +152,6 @@ bot.on("messageCreate", (msg) => {
 		power = false;
 		bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
 	}
-	if(command == '!creme') {
-		//console.log(msg.channel.guild.members.get("211962239433834498"))
-		msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).join().then(aew => {
-			bot.voiceConnections.get(msg.channel.guild.id).play('./pikadura.wav');
-		});
-	}
 	if(command == "!makako" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == false) {
 		makako = true;
 		msg.channel.guild.members.get("172027213972111360").edit({
