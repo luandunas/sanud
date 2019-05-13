@@ -113,7 +113,7 @@ bot.on("messageCreate", (msg) => {
 	}
 	if(command == "!dentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == false && msg.member.voiceState.channelID != null) {
 		power = true;
-		cid = member.voiceState.channelID;
+		cid = msg.member.voiceState.channelID;
 		msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function(m) {
 			if(m.roles.indexOf('576512821056110621') == -1) {
 				setTimeout(function() {
