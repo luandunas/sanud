@@ -133,6 +133,7 @@ bot.on("messageCreate", (msg) => {
 	}
 	if(command == "!cabodentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == true && msg.member.voiceState.channelID != null && cid != undefined) {
 		power = false;
+		cid = "";
 		msg.member.guild.channels.find(channel => channel.id == msg.member.voiceState.channelID).voiceMembers.forEach(function(m) {
 			if(m.roles.indexOf('576512821056110621') == -1) {
 				setTimeout(function() {
@@ -145,6 +146,7 @@ bot.on("messageCreate", (msg) => {
 		bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
 	} else if(command == "!cabodentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == true && msg.member.voiceState.channelID == null && cid != undefined) {
 		power = false;
+		cid = "";
 		msg.member.guild.channels.find(channel => channel.id == cid).voiceMembers.forEach(function(m) {
 			if(m.roles.indexOf('576512821056110621') == -1) {
 				setTimeout(function() {
@@ -157,6 +159,7 @@ bot.on("messageCreate", (msg) => {
 		bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
 	} else if(command == "!cabodentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == true && msg.member.voiceState.channelID == null && cid == undefined) {
 		power = false;
+		cid = "";
 		bot.createMessage(msg.channel.id, '**CABO DETADURA KARAIO**');
 	}
 	if(command == "!makako" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == false) {
