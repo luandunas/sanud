@@ -164,14 +164,14 @@ bot.on("messageCreate", (msg) => {
 	}
 	if(command == "!makako" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == false) {
 		makako = true;
-		msg.channel.guild.members.get("172027213972111360").edit({
+		msg.channel.guild.members.get("269288055708450817").edit({
 			mute: true,
 			deaf: true
 		})
 		bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih')
 	} else if(command == "!branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true) {
 		makako = false;
-		msg.channel.guild.members.get("172027213972111360").edit({
+		msg.channel.guild.members.get("269288055708450817").edit({
 			mute: false,
 			deaf: false
 		})
@@ -182,9 +182,10 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
 	cid = member.voiceState.channelID;
 	if(power == true) {
 		newChannel.voiceMembers.forEach(function(m) {
-			if(m.roles.indexOf('576512821056110621') == -1) {
+			if(m.roles.indexOf('269288055708450817') == -1) {
 				m.edit({
-					mute: true
+					mute: true,
+					deaf: false
 				})
 			}
 		})
@@ -202,7 +203,7 @@ bot.on("voiceStateUpdate", (member) => {
 			deaf: false
 		});
 	}
-	if(member.voiceState.id == '172027213972111360' && member.voiceState.mute == false && member.voiceState.deaf == false) {
+	if(member.voiceState.id == '269288055708450817' && member.voiceState.mute == false && member.voiceState.deaf == false) {
 		member.edit({
 			mute: true,
 			deaf: true
