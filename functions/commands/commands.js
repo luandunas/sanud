@@ -12,7 +12,7 @@ bot.on("messageCreate", (msg) => {
         if (m.roles.indexOf('576512821056110621') == -1) {
           m.edit({
             mute: true
-          })
+          });
         }
       });
       bot.createMessage(msg.channel.id, '**COMEÇOU A DENTADURA PORRA**');
