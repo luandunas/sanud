@@ -71,7 +71,7 @@ bot.on("messageCreate", (msg) => {
         mute: true,
         deaf: true
       })
-      bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih')
+      bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih');
     }else if (command == "branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true) {
       makako = false;
       msg.channel.guild.members.get("172027213972111360").edit({
