@@ -104,4 +104,15 @@ bot.on("messageCreate", (msg) => {
       upImg(msg, args);
       bot.sendChannelTyping(msg.channel.id);
     }
+    if(command == 'fat' && msg.attachments != ""){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      upImg(msg, args);
+      bot.sendChannelTyping(msg.channel.id);
+    }
+
+    if(command == 'fat' && args[0].indexOf('https://') != -1){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      upImg(msg, args);
+      bot.sendChannelTyping(msg.channel.id);
+    }
 });
