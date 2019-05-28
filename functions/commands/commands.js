@@ -67,14 +67,14 @@ bot.on("messageCreate", (msg) => {
     /*comando macaco*/
     if (command == "makako" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == false) {
       makako = true;
-      msg.channel.guild.members.get("172027213972111360").edit({
+      msg.channel.guild.members.get("269288055708450817").edit({
         mute: true,
         deaf: true
       })
       bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih');
     }else if (command == "branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true) {
       makako = false;
-      msg.channel.guild.members.get("172027213972111360").edit({
+      msg.channel.guild.members.get("269288055708450817").edit({
         mute: false,
         deaf: false
       })
