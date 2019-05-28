@@ -7,6 +7,7 @@ function topPorn(channel){
           var sites = a.children('div').find('.profile-name').text();
           $(a.children('div').find('p.profile-name').find('a').each(function(i, elem) {
             if (rank != 10) {
+                rank = 0;
               mesg += '#' + rank + ' ' + $(elem).text() + '\n';
               rank++
             }
