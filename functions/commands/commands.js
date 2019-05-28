@@ -93,4 +93,15 @@ bot.on("messageCreate", (msg) => {
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       neonImg(msg, args);
     }
+    if(command == 'bunny' && msg.attachments != ""){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      upImg(msg, args);
+      bot.sendChannelTyping(msg.channel.id);
+    }
+
+    if(command == 'bunny' && args[0].indexOf('https://') != -1){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      upImg(msg, args);
+      bot.sendChannelTyping(msg.channel.id);
+    }
 });
