@@ -72,7 +72,7 @@ bot.on("messageCreate", (msg) => {
         deaf: true
       })
       bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih');
-    }else if (command == "branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true) {
+    }else if (command == "branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true && msg.author.id != "269288055708450817") {
       makako = false;
       msg.channel.guild.members.get("269288055708450817").edit({
         mute: false,
