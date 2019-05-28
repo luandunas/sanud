@@ -29,14 +29,14 @@ const neonImg = async(msg, args) => {
 
 const upImg = async(msg, args) => {
     if(msg.attachments != ""){
-        const file = fs.createWriteStream("function/img/file.jpg");
+        const file = fs.createWriteStream("functions/img/file.jpg");
         const requ = https.get(msg.attachments[0].url, function(response) {
       response.pipe(file);
     });
 }
 
 if(args[0].indexOf('https://') != -1){
-        const file = await fs.createWriteStream("function/img/file.jpg");
+        const file = await fs.createWriteStream("functions/img/file.jpg");
         const requ = await https.get(args[0], function(response) {
       response.pipe(file);
       console.log('1');
@@ -52,7 +52,7 @@ if(args[0].indexOf('https://') != -1){
     page.click('button.button.gray.js-choose-photo')
     await page.waitForSelector('input[type="file"]');
     const elementHandle = await page.$('input[type="file"]');
-    await elementHandle.uploadFile('function/img/file.jpg');
+    await elementHandle.uploadFile('functions/img/file.jpg');
     await page.waitForSelector('.jcrop-tracker');
     await page.click('button.button.js-crop');
     await page.click('button.js-send-button');
