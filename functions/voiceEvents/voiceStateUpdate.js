@@ -10,9 +10,13 @@ bot.on("voiceStateUpdate", (member) => {
       deaf: false
     });
   }
-  if (member.voiceState.id == '269288055708450817' && member.voiceState.mute == false && member.voiceState.deaf == false) {
+  if (member.voiceState.id == '269288055708450817' && member.voiceState.mute == false) {
     member.edit({
-      mute: true,
+      mute: true
+    });
+  }
+  if (member.voiceState.id == '269288055708450817' && member.voiceState.deaf == false) {
+    member.edit({
       deaf: true
     });
   }
