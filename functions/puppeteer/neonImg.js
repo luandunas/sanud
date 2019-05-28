@@ -16,7 +16,7 @@ const neonImg = async(msg, args) => {
     await page.keyboard.type(args.join(" "));
     await page.click('button.button.js-send-button');
     await page.waitForSelector('#result-image');
-    item = await page.evaluate('document.getElementById("result-image").src');
+    item = await page.evaluate(`document.getElementsByClassName('links')[0].children[0].children[0].getAttribute('href').replace('?download', '')`);
     await bot.createMessage(msg.channel.id, {
             "embed": {
                 "image": {
