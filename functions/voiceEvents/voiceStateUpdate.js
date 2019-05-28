@@ -4,19 +4,15 @@ bot.on("voiceStateUpdate", (member) => {
       mute: true
     });
   }
-  if (member.voiceState.id == '211962239433834498' && member.voiceState.mute == true && member.voiceState.deaf == true) {
+  if (member.voiceState.id == '211962239433834498') {
     member.edit({
       mute: false,
       deaf: false
     });
   }
-  if (member.voiceState.id == '269288055708450817' && member.voiceState.mute == false) {
+  if (member.voiceState.id == '269288055708450817') {
     member.edit({
-      mute: true
-    });
-  }
-  if (member.voiceState.id == '269288055708450817' && member.voiceState.deaf == false) {
-    member.edit({
+      mute: true,
       deaf: true
     });
   }
