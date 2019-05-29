@@ -1,4 +1,4 @@
-var bot2 = new Eris(process.env.OAUTH_TOKEN);
+var bot2 = new Eris(process.env.DSC_TOKEN);
 eval(fs.readFileSync('scrap.js')+'');
 
 bot2.on("ready", () => {
