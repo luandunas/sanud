@@ -9,7 +9,7 @@ var options = {
     },
     identity: {
         username: "dunaaas",
-        password: process.env.OAUTH_TOKEN
+        password: process.env.TW_TOKEN
     },
     channels: canais
 
@@ -59,7 +59,7 @@ var options2 = {
     },
     identity: {
         username: "zmetsu",
-        password: process.env.OAUTH_TOKEN2
+        password: process.env.TW_TOKEN2
     },
     channels: canais
 
@@ -93,7 +93,7 @@ var options3 = {
     },
     identity: {
         username: "hellznaldin",
-        password: process.env.OAUTH_TOKEN3
+        password: process.env.TW_TOKEN3
     },
     channels: canais
 
