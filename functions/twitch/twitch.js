@@ -115,3 +115,38 @@ client3.on("chat", function (channel, userstate, message, self) {
         client.say("dunaaas", "Hellz Online!");
     }
 });
+
+//amigo do hellz1
+
+var options4 = {
+    options: {
+        debug: false
+    },
+    connection: {
+        reconnect: true
+    },
+    identity: {
+        username: "felipinhod13",
+        password: process.env.TW_TOKEN4
+    },
+    channels: canais
+
+};
+
+var client4 = new tmi.client(options4);
+client4.connect();
+
+//variaveis de eventos
+
+client4.on('connected', function(address, port) {
+    console.log("hellznaldin logged!");
+});
+
+client4.on("chat", function (channel, userstate, message, self) {
+    let command = message.split(" ")[0];
+    let args = message.split(" ").slice(1);
+    if (command === '!hellz'){
+        client.say("dunaaas", "Hellz Online!");
+    }
+});
+
