@@ -10,7 +10,8 @@
     "https": "^1.0.0",
     "myjson-api": "^1.0.1",
     "puppeteer": "^1.17.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "tmi.js": "^1.2.1"
   },
   "devDependencies": {},
   "scripts": {
