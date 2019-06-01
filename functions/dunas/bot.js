@@ -23,6 +23,6 @@ bot2.on("messageCreate", (msg) => {
     	bot2.createMessage(msg.channel.id, msg.author.mention + ' *he heee*');
     }else if(cmd == bot2.user.mention && msg.author.id == '211962239433834498'){
     	bot2.createMessage(msg.channel.id, msg.author.mention + ' Uari uari uoquen');
-    }
+    };
 });
 bot2.connect();
