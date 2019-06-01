@@ -12,6 +12,7 @@ function topPorn(channel){
               rank++
             }
           }))
+            console.log(mesg);
           bot.createMessage(channel, {
             embed: {
               author: {
