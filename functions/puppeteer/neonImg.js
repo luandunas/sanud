@@ -17,13 +17,7 @@ const neonImg = async(msg, args) => {
     await page.click('button.button.js-send-button');
     await page.waitForSelector('#result-image');
     item = await page.evaluate(`document.getElementsByClassName('links')[0].children[0].children[0].getAttribute('href').replace('?download', '')`);
-    await bot.createMessage(msg.channel.id, {
-            "embed": {
-                "image": {
-                "url": item,
-                }
-            }
-        });
+    await bot.createMessage(msg.channel.id, item);
     browser.close(); 
 }
 
@@ -59,13 +53,7 @@ if(args[0].indexOf('https://') != -1){
     try {
         await page.waitForSelector('.image.p402_hide');
         item = await page.evaluate(`document.getElementsByClassName('links')[0].children[0].children[0].getAttribute('href').replace('?download', '')`) 
-        await bot.createMessage(msg.channel.id, {
-            "embed": {
-                "image": {
-                    "url": item,
-                }
-            }
-        });
+	await bot.createMessage(msg.channel.id, item);
         browser.close();
      } catch(error) {
         browser.close();
@@ -105,13 +93,7 @@ if(args[0].indexOf('https://') != -1){
     try {
         await page.waitForSelector('.image.p402_hide');
         item = await page.evaluate(`document.getElementsByClassName('links')[0].children[0].children[0].getAttribute('href').replace('?download', '')`) 
-        await bot.createMessage(msg.channel.id, {
-            "embed": {
-                "image": {
-                    "url": item,
-                }
-            }
-        });
+	await bot.createMessage(msg.channel.id, item);
         browser.close();
      } catch(error) {
         browser.close();
