@@ -1,8 +1,12 @@
 console.log('ok command');
 bot.on("messageCreate", (msg) => {
+    console.log('1');
     command = msg.content.split(" ")[0];
+    console.log('2');
     if(!command.startsWith(options.prefix)) return;
+    console.log('3');
     command = command.slice(options.prefix.length);
+    console.log('4');
 
     args = msg.content.split(" ").slice(1);
 
