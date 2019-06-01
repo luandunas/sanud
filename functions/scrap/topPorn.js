@@ -10,26 +10,26 @@ function topPorn(channel){
                 rank = 0;
               mesg += '#' + rank + ' ' + $(elem).text() + '\n';
               rank++
-            }
-          }))
-            console.log(mesg);
-          bot.createMessage(channel, {
-            embed: {
-              author: {
-                name: "Sanud"
-              },
-              color: 0x00FF88,
-              fields: [{
-                name: "Top 10",
-                value: mesg
-              }],
-              footer: { // Footer text
-                text: 'XVideos!'
-              }
-            }
+            } if (rank > 10){
+                    bot.createMessage(channel, {
+                        embed: {
+                         author: {
+                            name: "Sanud"
+                        },
+                        color: 0x00FF88,
+                        fields: [{
+                            name: "Top 10",
+                            value: mesg
+                        }],
+                        footer: { // Footer text
+                            text: 'XVideos!'
+                        }
+                    }
           });
           mesg = "";
           rank = 0;
+            }
+          }))
           //console.log(sites);
         })
       }
