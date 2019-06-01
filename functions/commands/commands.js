@@ -1,3 +1,4 @@
+console.log('ok command');
 bot.on("messageCreate", (msg) => {
     command = msg.content.split(" ")[0];
     if(!command.startsWith(options.prefix)) return;
