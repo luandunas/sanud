@@ -8,7 +8,7 @@ bot.on("messageCreate", (msg) => {
 
     if(command == "oi"){
       bot.createMessage(msg.channel.id, "oi");
-    }
+    };
     /*comando dentadura*/
     if (command == "dentadura" && msg.member.roles.indexOf('576512821056110621') != -1 && power == false && msg.member.voiceState.channelID != null) {
       power = true;
