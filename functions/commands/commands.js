@@ -97,20 +97,18 @@ bot.on("messageCreate", (msg) => {
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       neonImg(msg, args);
     }
-    if(command == 'bunny' && msg.attachments != ""){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bunny(msg, args);
-      bot.sendChannelTyping(msg.channel.id);
-    }
-    if(command == "bunny" && args[0] == null && imgEffect == false){
+    if(command == 'bunny' && msg.attachments != "" && imgEffect == false){
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       bunny(msg, args);
     }
 
-    if(command == 'bunny' && args[0].indexOf('https://') != -1){
+    if(command == 'bunny' && args[0] != null && args[0].indexOf('https://') != -1 && imgEffect == false){
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       bunny(msg, args);
-      bot.sendChannelTyping(msg.channel.id);
+    }
+    if(command == "bunny" && args[0] == null && imgEffect == false){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      bunny(msg, args);
     }
     if(command == 'fat' && msg.attachments != "" && imgEffect == false){
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
