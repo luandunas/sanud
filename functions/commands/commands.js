@@ -112,16 +112,18 @@ bot.on("messageCreate", (msg) => {
       bunny(msg, args);
       bot.sendChannelTyping(msg.channel.id);
     }
-    if(command == 'fat' && msg.attachments != ""){
+    if(command == 'fat' && msg.attachments != "" && imgEffect == false){
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       fatImg(msg, args);
-      bot.sendChannelTyping(msg.channel.id);
     }
 
-    if(command == 'fat' && args[0].indexOf('https://') != -1){
+    if(command == 'fat' && args[0] != null && args[0].indexOf('https://') != -1 && imgEffect == false){
       bot.createMessage(msg.channel.id, "Processando, aguarde.");
       fatImg(msg, args);
-      bot.sendChannelTyping(msg.channel.id);
+    }
+    if(command == "fat" && args[0] == null && imgEffect == false){
+      bot.createMessage(msg.channel.id, "Processando, aguarde.");
+      fatImg(msg, args);
     }
     
     if(command == 'bopbop' && msg.attachments != "" && imgEffect == false){
