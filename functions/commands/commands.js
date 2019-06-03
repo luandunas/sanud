@@ -3,6 +3,12 @@ bot.on("messageCreate", (msg) => {
    if(mute.indexOf(msg.author.id) != -1) {
       msg.delete();
     }
+    if(viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
+      msg.addReaction('🏳️‍🌈')
+    }
+    if(cuck.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
+      msg.addReaction('🐂')
+    }
     command = msg.content.split(" ")[0];
     if(!command.startsWith(optionss.prefix)) return;
     command = command.slice(optionss.prefix.length);
@@ -124,9 +130,6 @@ bot.on("messageCreate", (msg) => {
 			bot.createMessage(msg.channel.id, args[0] + ' PASSEI A MAKITA NO TEU CHIFRE 🐃 KKKKK');
 		}
 	}
-	if(cuck.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
-		msg.addReaction('🐂')
-	}
 	if(command == 'viado' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && viado.indexOf(args[0].replace(/\D/g, '')) == -1) {
 		msg.delete();
 		viado.push(args[0].replace(/\D/g, ''));
@@ -139,8 +142,5 @@ bot.on("messageCreate", (msg) => {
 			console.log(viado);
 			bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
 		}
-	}
-	if(viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
-		msg.addReaction('🏳️‍🌈')
 	}
 });
