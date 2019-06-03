@@ -6,6 +6,6 @@ eval(fs.readFileSync('functions/commands/commands.js') + fs.readFileSync('functi
 
 /*bot ready*/
 bot.on("ready", () => {
-  console.log("BOT Ready!")
+  console.log("BOT Ready!");
 });
 bot.connect();
