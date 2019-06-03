@@ -106,11 +106,9 @@ bot.on("messageCreate", (msg) => {
 		mute.push(args[0].replace(/\D/g, ''));
 	}
 	if(command === "calaboca" && args[0] != null && msg.member.roles.indexOf('576512821056110621') == -1) {
-		msg.delete();
 		msg.channel.createMessage(msg.author.mention + ' você não tem permissão, ma🌵');
 	}
 	if(command === "descalar" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
-		msg.delete();
 		msg.channel.createMessage(args[0] + ' PODE FALAR KRL! Kk');
 		if(mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
 			mute.splice(mute.indexOf(args[0].replace(/\D/g, '')), 1);
