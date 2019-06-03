@@ -92,49 +92,55 @@ bot.on("messageCreate", (msg) => {
     if(command == "topxv"){
       topPorn(msg.channel.id);
     }
-
-    if(command == 'neon' && args[0] != null){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      neonImg(msg, args);
-    }
-    if(command == 'bunny' && msg.attachments != "" && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bunny(msg, args);
-    }
-
-    if(command == 'bunny' && args[0] != null && args[0].indexOf('https://') != -1 && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bunny(msg, args);
-    }
-    if(command == "bunny" && args[0] == null && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bunny(msg, args);
-    }
-    if(command == 'fat' && msg.attachments != "" && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      fatImg(msg, args);
-    }
-
-    if(command == 'fat' && args[0] != null && args[0].indexOf('https://') != -1 && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      fatImg(msg, args);
-    }
-    if(command == "fat" && args[0] == null && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      fatImg(msg, args);
-    }
-    
-    if(command == 'bopbop' && msg.attachments != "" && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bopbop(msg, args);
-    }
-
-    if(command == 'bopbop' && args[0] != null && args[0].indexOf('https://') != -1 && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bopbop(msg, args);
-    }
-    if(command == "bopbop" && args[0] == null && imgEffect == false){
-      bot.createMessage(msg.channel.id, "Processando, aguarde.");
-      bopbop(msg, args);
-    }
+    if(command === "calaboca" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && mute.indexOf(args[0].replace(/\D/g, '')) == -1) {
+		msg.channel.createMessage(args[0] + ' CALADO PORA! Kk');
+		mute.push(args[0].replace(/\D/g, ''));
+	}
+	if(command === "calaboca" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1) {
+		msg.delete();
+		msg.channel.createMessage(msg.author.mention + ' você não tem permissão, ma🌵');
+	}
+	if(command === "descalar" && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
+		msg.delete();
+		msg.channel.createMessage(args[0] + ' PODE FALAR KRL! Kk');
+		if(mute.indexOf(args[0].replace(/\D/g, '')) != -1) {
+			mute.splice(mute.indexOf(args[0].replace(/\D/g, '')), 1);
+			console.log(mute);
+		}
+	}
+	if(command == 'cuck' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) == -1) {
+		msg.delete();
+		cuck.push(args[0].replace(/\D/g, ''));
+		bot.createMessage(msg.channel.id, args[0] + ' te amo bb, você é meu unico amor ❤');
+	}
+	if(command == 'descuck' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && cuck.indexOf(args[0].replace(/\D/g, '')) != -1) {
+		if(cuck.indexOf(args[0].replace(/\D/g, '')) != -1) {
+			msg.delete();
+			cuck.splice(cuck.indexOf(args[0].replace(/\D/g, '')), 1);
+			console.log(cuck);
+			bot.createMessage(msg.channel.id, args[0] + ' PASSEI A MAKITA NO TEU CHIFRE 🐃 KKKKK');
+		}
+	}
+	if(cuck.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
+		msg.addReaction('🐂')
+	}
+	if(command == 'viado' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && viado.indexOf(args[0].replace(/\D/g, '')) == -1) {
+		msg.delete();
+		viado.push(args[0].replace(/\D/g, ''));
+		bot.createMessage(msg.channel.id, args[0] + ' ta chupando uns pitão 🏳️‍🌈');
+	}
+	if(command == 'hetero' && args[0] != null && msg.member.roles.indexOf('576512821056110621') != -1 && viado.indexOf(args[0].replace(/\D/g, '')) != -1) {
+		if(viado.indexOf(args[0].replace(/\D/g, '')) != -1) {
+			msg.delete();
+			viado.splice(viado.indexOf(args[0].replace(/\D/g, '')), 1);
+			console.log(viado);
+			bot.createMessage(msg.channel.id, args[0] + ' descobriu LA BUCETONA 🍑');
+		}
+	}
+	if(viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
+		msg.addReaction('🏳️‍🌈')
+	}
+	if(mute.indexOf(msg.author.id) != -1) {
+		msg.delete();
+	}
 });
