@@ -1,5 +1,8 @@
 console.log('ok command');
 bot.on("messageCreate", (msg) => {
+   if(mute.indexOf(msg.author.id) != -1) {
+      msg.delete();
+    }
     command = msg.content.split(" ")[0];
     if(!command.startsWith(optionss.prefix)) return;
     command = command.slice(optionss.prefix.length);
@@ -139,8 +142,5 @@ bot.on("messageCreate", (msg) => {
 	}
 	if(viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
 		msg.addReaction('🏳️‍🌈')
-	}
-	if(mute.indexOf(msg.author.id) != -1) {
-		msg.delete();
 	}
 });
