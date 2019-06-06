@@ -1,3 +1,6 @@
+FB.options({accessToken: process.env.FB_TOKEN, appSecretProof: process.env.FB_ID});
+console.log(fboptions);
+
 function requestjson() {
     setTimeout(function() {
         request({
