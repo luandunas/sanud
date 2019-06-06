@@ -22,6 +22,7 @@ function fbsend() {
                 return;
             }
             console.log('Post Id: ' + res.id);
+            cc = undefined;
         });
     }
 }
