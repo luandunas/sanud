@@ -1,7 +1,7 @@
 function requestjson() {
     setTimeout(function() {
         request({
-            url: options.jsonapi,
+            url: 'https://api.myjson.com/bins/njwy4',
         }, function(err, res, body) {
             json = JSON.parse(body);
             console.log(body);
