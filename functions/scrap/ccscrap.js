@@ -15,7 +15,7 @@ function requestjson() {
 function fbsend() {
     if (cc != undefined) {
         FB.api('yggdrasilbrz/feed', 'post', {
-            message: `Community Colors! \n ${cc} \n Nos siga para ser notificado quando houver nova showcase! Entre em nosso discord para receber notificação por lá https://discord.gg/VxVujFe`;
+            message: `Community Colors! \n ${cc} \n Nos siga para ser notificado quando houver nova showcase! Entre em nosso discord para receber notificação por lá https://discord.gg/VxVujFe`
         }, function(res) {
             if (!res || res.error) {
                 console.log(!res ? 'error occurred' : res.error);
