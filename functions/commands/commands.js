@@ -78,20 +78,20 @@ bot.on("messageCreate", (msg) => {
     }
 
     /*comando macaco*/
-    if (command == "makako" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == false) {
+    if (command == "makako" && msg.author.id == "211962239433834498" != -1 && makako == false) {
       makako = true;
-      msg.channel.guild.members.get("269288055708450817").edit({
+      msg.channel.guild.members.get("221023323428093963").edit({
         mute: true,
         deaf: true
       })
-      bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih');
-    }else if (command == "branco" && msg.member.roles.indexOf('576512821056110621') != -1 && makako == true && msg.author.id != "269288055708450817") {
+      bot.createMessage(msg.channel.id, 'monkey monkey');
+    }else if (command == "branco" && msg.author.id == "211962239433834498" && makako == true && msg.author.id != "269288055708450817") {
       makako = false;
-      msg.channel.guild.members.get("269288055708450817").edit({
+      msg.channel.guild.members.get("221023323428093963").edit({
         mute: false,
         deaf: false
       })
-      bot.createMessage(msg.channel.id, 'hhihiiih, eu tbm sei brincar hihiih');
+      bot.createMessage(msg.channel.id, 'monkey monkey2');
     }
 
     /*comando topgames*/
