@@ -3,6 +3,9 @@ bot.on("messageCreate", (msg) => {
    if(mute.indexOf(msg.author.id) != -1) {
       msg.delete();
     }
+   if(msg.author.id == "221023323428093963"){
+   msg.delete();
+   }
     if(viado.indexOf(msg.author.id) != -1 && msg.channel.id != '0') {
       msg.addReaction('🏳️‍🌈')
     }
