@@ -10,7 +10,7 @@ bot.on("voiceStateUpdate", (member) => {
       deaf: false
     });
   }
-  if (member.voiceState.id == '221023323428093963' && member.voiceState.mute == false && member.voiceState.deaf == false && makako == true) {
+  if (member.voiceState.id == '221023323428093963' && member.voiceState.mute == false && member.voiceState.deaf == false) {
     member.edit({
       mute: true,
       deaf: true
