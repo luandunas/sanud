@@ -10,10 +10,4 @@ bot.on("voiceChannelJoin", (member, newChannel) => {
     });
   }
   if (newChannel.id == member.voiceState.channelID && member) {}
-  if(member.id == "221023323428093963"){
-    member.edit({
-      mute: true,
-      deaf: true
-    });
-  }
 });
