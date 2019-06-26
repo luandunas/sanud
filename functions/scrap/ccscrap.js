@@ -36,7 +36,6 @@ setInterval(function() {
         if (!error && response.statusCode != 404 && response.statusCode == 200) {
             const $ = cheerio.load(body);
             Array.from($('div.et_pb_blog_grid_wrapper h2.entry-title a')).forEach(function(elem) {
-                console.log(elem.children[0].data);
                 if (elem.children[0].data.indexOf('Art') != -1 && JSON.stringify(json).indexOf(elem.attribs['href']) == -1) {
                     request(elem.attribs['href'], function(error, response, body) {
                         if (!error && response.statusCode != 404 && response.statusCode == 200) {
