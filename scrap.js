@@ -29,7 +29,7 @@ setInterval(function() {
                     request(elem.attribs['href'], function(error, response, body) {
                         if (!error && response.statusCode != 404 && response.statusCode == 200) {
                             cc = cheerio.load(body);
-                            bot.createMessage('564337011268517890', `**CCS: <@&481690111675727882>  <@&211962239433834498> \n ${cc.text().match(/.....-.....-...../g).toString().replace(/,/g, '\n')}**`)
+                            bot.createMessage('564337011268517890', `**CCS: <@&481690111675727882>  <@&211962239433834498> \n ${cc.text().match(/......-....../g).toString().replace(/,/g, '\n')}**`)
                         }
                         json = JSON.stringify(json).replace('}}', `},"${elem.attribs['href']}":{"link":"${elem.attribs['href']}"}}`);
                         json = JSON.parse(json);
