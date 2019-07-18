@@ -13,7 +13,7 @@ function doStuff() {
     if (JSON.stringify(data) === JSON.stringify(olddata)) {
         request('https://api.streamelements.com/kappa/v2/store/5cc799026e852d26fcf16717/items', function(error, response, body) {
             if (!error && response.statusCode == 200) {
-                data = JSON.parse(body);
+                data = JSON.parse(body);//
                 setTimeout(doStuff, 10000);
             }
         });
