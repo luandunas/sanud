@@ -14,7 +14,7 @@ function doStuff() {
         request('https://api.streamelements.com/kappa/v2/store/5cc799026e852d26fcf16717/items', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 data = JSON.parse(body);
-                setTimeout(doStuff, 50);
+                setTimeout(doStuff, 10000);
             }
         });
         setTimeout(doStuff, 50);
