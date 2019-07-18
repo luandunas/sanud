@@ -1,3 +1,4 @@
+console.log('ok gaulestore');
 function oldreq(){
 	request('https://api.streamelements.com/kappa/v2/store/5cc799026e852d26fcf16717/items', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
