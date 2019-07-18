@@ -18,7 +18,6 @@ function doStuff() {
             }
         });
         setTimeout(doStuff, 50);
-        //wait 50 millisecnds then recheck
         return;
     }
     for (x in data) {
