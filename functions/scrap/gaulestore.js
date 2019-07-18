@@ -17,7 +17,6 @@ function doStuff() {
                 setTimeout(doStuff, 10000);
             }
         });
-        setTimeout(doStuff, 50);
         return;
     }
     for (x in data) {
